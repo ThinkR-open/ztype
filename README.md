@@ -1,35 +1,27 @@
 # ztype
 
 Are you a typing master ? 
-test your skills with your favorites R packages
+
+Test your skills with your favorites R packages on
 <http://zty.pe>
 
 
-## usage
+
+
+## Installation & usage
+
 ```R
+# install.packages("devtools")
+devtools::install_github("ThinkRstat/ztype")
+
 library(ztype)
-ztype()
-
-require(magrittr)
-
-require(ztype)
-require(magrittr)
 ztype() # dplyr, ggplot2 and lubridate
+
+require(magrittr)
 c("lubridate") %>% ztype()
 
 
 ```
 
-
-
-
-## Installation
-
-
-
-```R
-# install.packages("devtools")
-devtools::install_github("ThinkRstat/ztype")
-```
 
 
