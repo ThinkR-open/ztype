@@ -66,7 +66,8 @@ gen_paragraphe <- function(liste,nb=25){
 #' require(ztype)
 #' require(magrittr)
 #' c("dplyr","ggplot2","lubridate") %>% gen_liste() %>% 
-#' gen_paragraphe(10) %>% gen_game() %>% browseURL()
+#' gen_paragraphe(10) %>% 
+#' gen_game() %>% browseURL()
 #'
 gen_game <-function(text,open=FALSE){
   

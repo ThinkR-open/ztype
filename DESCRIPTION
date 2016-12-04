@@ -1,16 +1,18 @@
 Package: ztype
 Type: Package
-Title: Launch Ztype Game With R function
+Title: Launch Ztype Game with R Function
 Version: 0.1.0
 Author: Vincent Guyader
 Maintainer: Vincent Guyader <vincent@thinkr.fr>
 Description: Are You a R typing master ? Use zty.pe with your favorites R packages.
-License: GPL-3
+License: file LICENSE
 LazyData: TRUE
 Imports: magrittr,
     rvest,
     stats,
-    stringr
+    stringr,
+    utils,
+    XML
 Suggests: dplyr,
     ggplot2,
     lubridate

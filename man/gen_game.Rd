@@ -17,6 +17,8 @@ generate a game on ztype
 \examples{
 require(ztype)
 require(magrittr)
-c("dplyr","ggplot2","lubridate") \%>\% gen_liste() \%>\% gen_paragraphe(10) \%>\% gen_game() \%>\% browseURL()
+c("dplyr","ggplot2","lubridate") \%>\% gen_liste() \%>\%
+gen_paragraphe(10) \%>\%
+gen_game() \%>\% browseURL()
 }
 
