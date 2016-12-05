@@ -24,4 +24,5 @@ c("lubridate") %>% ztype()
 ```
 
 
+![alt tag](https://raw.githubusercontent.com/ThinkRstat/ztype/master/screen.png)
 
