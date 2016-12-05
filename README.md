@@ -6,6 +6,8 @@ Test your skills with your favorites R packages on
 <http://zty.pe>
 
 
+This game was originally written by Dominic Szablewski with music from Andreas Loesch. Its original URL is
+<http://www.phoboslab.org/ztype/>
 
 
 ## Installation & usage
