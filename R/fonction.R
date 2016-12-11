@@ -4,9 +4,11 @@
 #' @export
 #' @importFrom stringr str_length
 #' @examples
+#' \dontrun{
 #' require(ztype)
 #' require(magrittr)
 #' c("dplyr","ggplot2","lubridate") %>% gen_liste()
+#' }
 
 gen_liste<-function(packages){
   sapply(packages,function(.){require(.,character.only=TRUE)})
@@ -63,11 +65,13 @@ gen_paragraphe <- function(liste,nb=25){
 #' @importFrom magrittr %>%
 #' @importFrom utils browseURL
 #' @examples
+#' \dontrun{
 #' require(ztype)
 #' require(magrittr)
 #' c("dplyr","ggplot2","lubridate") %>% gen_liste() %>% 
 #' gen_paragraphe(10) %>% 
 #' gen_game() %>% browseURL()
+#' }
 #'
 gen_game <-function(text,open=FALSE){
   
@@ -106,10 +110,12 @@ gen_game <-function(text,open=FALSE){
 #' @export
 #' @importFrom magrittr %>%
 #' @examples
+#' \dontrun{
 #' require(ztype)
 #' require(magrittr)
 #' ztype()# dplyr, ggplot2 and lubridate
 #' c("lubridate") %>% ztype()
+#' }
 #'
 ztype <-function(packages=c("dplyr","ggplot2","lubridate"),nb=25){
   

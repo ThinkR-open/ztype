@@ -8,12 +8,12 @@
 #' @name ztype
 #' @examples
 #'
-#'
+#'\dontrun{
 #' require(ztype)
 #' require(magrittr)
 #' ztype() # dplyr, ggplot2 and lubridate
 #' c("lubridate") %>% ztype()
-#'
+#'}
 #'
 #'
 #'
