@@ -13,8 +13,7 @@ Imports:
     rvest,
     stats,
     stringr,
-    utils
-Suggests:
+    utils,
     dplyr,
     ggplot2,
     lubridate
