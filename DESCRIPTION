@@ -1,11 +1,11 @@
 Package: ztype
 Type: Package
-Title: Launch Ztype Game with R Functions
+Title: Run a Ztype Game Loaded with R Functions
 Version: 0.1.0
 Author: Vincent Guyader
 Maintainer: Vincent Guyader <vincent@thinkr.fr>
-Description: Are You a R typing master ? Use zty.pe with your favorites R
-    packages. This is a game, and the goal is to type as fast as you can some R instructions to destroy the vessels oponnent 
+Description: How fast can you type R functions on your keyboard ? 
+Find out by running a zty.pe game : export R functions as instructions to type to destroy oponnents vessels.
 License: GPL-3
 LazyData: TRUE
 Imports:
@@ -13,8 +13,7 @@ Imports:
     rvest,
     stats,
     stringr,
-    utils
-Suggests:
+    utils,
     dplyr,
     ggplot2,
     lubridate

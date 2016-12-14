@@ -1,10 +1,8 @@
 # ztype
 
-Are you a typing master ? 
+How fast can you type R functions on your keyboard ?
 
-Test your skills with your favorites R packages on
-<http://zty.pe>
-
+Find out by running a zty.pe game : export R functions as instructions to type to destroy oponnents vessels.
 
 This game was originally written by Dominic Szablewski with music from Andreas Loesch. Its original URL is
 <http://www.phoboslab.org/ztype/>
