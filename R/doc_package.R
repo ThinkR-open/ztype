@@ -3,7 +3,7 @@
 #' @encoding UTF-8
 #'
 #' @title ztype
-#' @description launch personnalized zty.pe game
+#' @description How fast can you type R functions on your keyboard? Find out by running a 'zty.pe' game: export R functions as instructions to type to destroy opponents vessels.
 #' @docType package
 #' @name ztype
 #' @examples

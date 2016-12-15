@@ -1,5 +1,5 @@
 #' @title gen_liste
-#' @description generate a list of function
+#' @description extract all functions from a list of packages
 #' @param packages pacakge to parse
 #' @export
 #' @importFrom stringr str_length
@@ -19,8 +19,8 @@ gen_liste<-function(packages){
 #' @title niveau
 #' @description generate a level
 #' @param liste the words to use
-#' @param quantite number of word
-#' @param difficulte difficulty
+#' @param quantite number of words to generate
+#' @param difficulte the difficulty level
 #' @export
 #' @importFrom stats dpois
 #' @examples
@@ -34,9 +34,9 @@ niveau <- function(liste,quantite,difficulte){
 }
 
 #' @title gen_paragraphe
-#' @description generate level
+#' @description generate a paragraph
 #' @param liste the words to use
-#' @param nb number of level
+#' @param nb the number of level
 #' @export
 #' @importFrom stats dpois
 #' @examples
