@@ -4,8 +4,7 @@ Title: Run a Ztype Game Loaded with R Functions
 Version: 0.1.0
 Author: Vincent Guyader
 Maintainer: Vincent Guyader <vincent@thinkr.fr>
-Description: How fast can you type R functions on your keyboard ? 
-Find out by running a zty.pe game : export R functions as instructions to type to destroy oponnents vessels.
+Description: How fast can you type R functions on your keyboard? Find out by running a 'zty.pe' game: export R functions as instructions to type to destroy opponents vessels.
 License: GPL-3
 LazyData: TRUE
 Imports:
