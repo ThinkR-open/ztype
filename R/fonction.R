@@ -1,6 +1,6 @@
 #' @title gen_liste
-#' @description extract all functions from a list of packages
-#' @param packages pacakge to parse
+#' @description extracts a list of all function names from a given list of packages
+#' @param packages package(s) to parse and extract function names from
 #' @export
 #' @importFrom stringr str_length
 #' @examples
@@ -17,10 +17,10 @@ gen_liste<-function(packages){
 }
 
 #' @title niveau
-#' @description generate a level
-#' @param liste the words to use
-#' @param quantite number of words to generate
-#' @param difficulte the difficulty level
+#' @description generates a collection of words to build a ZType game level
+#' @param liste a vector of the collection of words to use
+#' @param quantite an integer the number of words to pick in 
+#' @param difficulte an integer reflecting the difficulty level
 #' @export
 #' @importFrom stats dpois
 #' @examples
@@ -57,7 +57,7 @@ gen_paragraphe <- function(liste,nb=25){
 
 
 #' @title gen_game
-#' @description generate a game on ztype
+#' @description generate a ZType game 
 #' @param text text to use
 #' @param open booleen open browser
 #' @export
@@ -104,9 +104,9 @@ gen_game <-function(text,open=FALSE){
 
 
 #' @title ztype
-#' @description launch a ztype game
-#' @param packages vector with installed package names
-#' @param nb number of level
+#' @description launch a ZType game using function names of R packages
+#' @param packages a vector containing installed packages from which extract function names
+#' @param nb number of levels to design in the ZType game
 #' @export
 #' @importFrom magrittr %>%
 #' @examples

@@ -6,7 +6,7 @@
 
         pdesc <- packageDescription(pkgname)
         packageStartupMessage('')
-        packageStartupMessage(pdesc$Package, " ", pdesc$Version, " by Vinnent Guyader")
+        packageStartupMessage(pdesc$Package, " ", pdesc$Version, " by Vincent Guyader")
         packageStartupMessage("->  For help type help('ztype')")
         packageStartupMessage('')
             }
