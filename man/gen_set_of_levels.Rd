@@ -17,7 +17,7 @@ generate a set of levels with increasing difficulty
 \examples{
 require(ztype)
 require(magrittr)
-c("dplyr","ggplot2","lubridate") \%>\% gen_set_of_words() \%>\% 
+c("dplyr","ggplot2","lubridate") \%>\% gen_set_of_words() \%>\%
 gen_set_of_levels(10) \%>\% cat()
 }
 

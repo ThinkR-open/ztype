@@ -15,5 +15,6 @@ Imports:
     utils,
     dplyr,
     ggplot2,
-    lubridate
+    lubridate,
+    assertthat
 RoxygenNote: 5.0.1

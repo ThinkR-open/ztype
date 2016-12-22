@@ -18,8 +18,8 @@ generate a ZType game by puhsing a set of levels on the website.
 \dontrun{
 require(ztype)
 require(magrittr)
-c("dplyr","ggplot2","lubridate") \%>\% gen_set_of_words() \%>\% 
-gen_set_of_levels(10) \%>\% 
+c("dplyr","ggplot2","lubridate") \%>\% gen_set_of_words() \%>\%
+gen_set_of_levels(10) \%>\%
 gen_game() \%>\% browseURL()
 }
 

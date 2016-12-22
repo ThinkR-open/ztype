@@ -4,14 +4,14 @@
 \alias{level}
 \title{level}
 \usage{
-level(set_of_words, quantity, difficulte)
+level(set_of_words, quantity, difficulty)
 }
 \arguments{
 \item{set_of_words}{a sorted vector of the collection of words to use}
 
 \item{quantity}{an integer the number of words to pick in}
 
-\item{difficulte}{an integer reflecting the difficulty level}
+\item{difficulty}{an integer reflecting the level's difficulty}
 }
 \description{
 generates a collection of words to build a ZType game level
