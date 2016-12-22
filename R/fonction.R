@@ -1,79 +1,80 @@
-#' @title gen_liste
-#' @description extracts a list of all function names from a given list of packages
-#' @param packages package(s) to parse and extract function names from
+#' @title gen_set_of_words
+#' @description extracts all function names from a given list of packages
+#' @param packages character vector. package(s) to parse and extract function names from
 #' @export
 #' @importFrom stringr str_length
+#' @return a character vector
 #' @examples
 #' \dontrun{
 #' require(ztype)
 #' require(magrittr)
-#' c("dplyr","ggplot2","lubridate") %>% gen_liste()
+#' c("dplyr","ggplot2","lubridate") %>% gen_set_of_words()
 #' }
 
-gen_liste<-function(packages){
-  sapply(packages,function(.){require(.,character.only=TRUE)})
-  liste <- unlist(sapply(packages,function(.){ls(paste0("package:",.))}))
-  liste[order(str_length(liste))]
+gen_set_of_words<-function(packages){
+  #sapply(packages,function(.){require(.,character.only=TRUE)})
+  set_of_words <- unlist(sapply(packages,function(.){ls(paste0("package:",.))}))
+  set_of_words[order(str_length(set_of_words))]
 }
 
-#' @title niveau
+#' @title level
 #' @description generates a collection of words to build a ZType game level
-#' @param liste a vector of the collection of words to use
-#' @param quantite an integer the number of words to pick in 
-#' @param difficulte an integer reflecting the difficulty level
+#' @param set_of_words a sorted vector of the collection of words to use
+#' @param quantity an integer the number of words to pick in 
+#' @param difficulte an integer reflecting the level's difficulty 
 #' @export
 #' @importFrom stats dpois
 #' @examples
 #' require(ztype)
 #' require(magrittr)
-#' c("dplyr","ggplot2","lubridate") %>% gen_liste() %>% niveau(10,50)
+#' c("dplyr","ggplot2","lubridate") %>% gen_set_of_words() %>% level(10,50)
 
 
-niveau <- function(liste,quantite,difficulte){
-  paste(sample(liste,size=quantite,prob =  dpois(seq_along(liste),difficulte),replace=TRUE),collapse=" ")
+level <- function(set_of_words,quantity,difficulte){
+  paste(sample(set_of_words,size=quantity,prob =  dpois(seq_along(set_of_words),difficulte),replace=TRUE),collapse=" ")
 }
 
-#' @title gen_paragraphe
-#' @description generate a paragraph
-#' @param liste the words to use
-#' @param nb the number of level
+#' @title gen_set_of_levels
+#' @description generate a set of levels with increasing difficulty
+#' @param set_of_words a sorted vector of the collection of words to use
+#' @param nb the number of levels to generate
 #' @export
 #' @importFrom stats dpois
 #' @examples
 #' require(ztype)
 #' require(magrittr)
-#' c("dplyr","ggplot2","lubridate") %>% gen_liste() %>% 
-#' gen_paragraphe(10) %>% cat()
+#' c("dplyr","ggplot2","lubridate") %>% gen_set_of_words() %>% 
+#' gen_set_of_levels(10) %>% cat()
 
 
 
-gen_paragraphe <- function(liste,nb=25){
-  p <- mapply(FUN = niveau,
-              quantite=3:(nb+2),
-              difficulte=seq(from=1,to=length(liste),length.out =nb),
-              liste=list(liste))
+gen_set_of_levels <- function(set_of_words,nb=25){
+  p <- mapply(FUN = level,
+              quantity=3:(nb+2),
+              difficulte=seq(from=1,to=length(set_of_words),length.out =nb),
+              set_of_words=list(set_of_words))
   paste(p,collapse="\n\n\n")
 }
 
 
 #' @title gen_game
-#' @description generate a ZType game 
-#' @param text text to use
+#' @description generate a ZType game by puhsing a set of levels on the website.
+#' @param set_of_levels the set of levels to use
 #' @param open booleen open browser
 #' @export
-#' @import rvest
+#' @importFrom  rvest html_session html_form set_values
 #' @importFrom magrittr %>%
 #' @importFrom utils browseURL
 #' @examples
 #' \dontrun{
 #' require(ztype)
 #' require(magrittr)
-#' c("dplyr","ggplot2","lubridate") %>% gen_liste() %>% 
-#' gen_paragraphe(10) %>% 
+#' c("dplyr","ggplot2","lubridate") %>% gen_set_of_words() %>% 
+#' gen_set_of_levels(10) %>% 
 #' gen_game() %>% browseURL()
 #' }
 #'
-gen_game <-function(text,open=FALSE){
+gen_game <-function(set_of_levels,open=FALSE){
   
   pgsession <-html_session("http://zty.pe/?load")
   pgform    <-html_form(pgsession)[[1]]
@@ -87,7 +88,7 @@ gen_game <-function(text,open=FALSE){
   attr(fake_submit_button, "class") <- "input"
   pgform[["fields"]][["submit"]] <- fake_submit_button
   
-  filled_form <- set_values(pgform,`text` = text)
+  filled_form <- set_values(pgform,`text` = set_of_levels)
   submit_form(pgsession,filled_form)-> j
   j$response %>% unclass() %>%  .$url ->out
   
@@ -120,6 +121,6 @@ gen_game <-function(text,open=FALSE){
 ztype <-function(packages=c("dplyr","ggplot2","lubridate"),nb=25){
   
   packages %>%
-    gen_liste() %>% gen_paragraphe(nb) %>% gen_game(open = TRUE)
+    gen_set_of_words() %>% gen_set_of_levels(nb) %>% gen_game(open = TRUE)
   
 }
