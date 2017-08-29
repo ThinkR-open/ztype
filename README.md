@@ -12,7 +12,7 @@ This game was originally written by Dominic Szablewski with music from Andreas L
 
 ```R
 # install.packages("devtools")
-devtools::install_github("ThinkRstat/ztype")
+devtools::install_github("ThinkR-open/ztype")
 
 library(ztype)
 ztype() # dplyr, ggplot2 and lubridate
@@ -24,5 +24,5 @@ c("lubridate") %>% ztype()
 ```
 
 
-![alt tag](https://raw.githubusercontent.com/ThinkRstat/ztype/master/screen.png)
+![alt tag](https://raw.githubusercontent.com/ThinkR-open/ztype/master/screen.png)
 
